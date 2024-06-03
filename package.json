@@ -1,5 +1,10 @@
 {
-  "dependencies": {
-    "next": "^14.2.3"
+  "name": "my-cloudflare-pages-backend",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "wrangler dev"
+  },
+  "devDependencies": {
+   "wrangler": "^2.0.0"
   }
 }
