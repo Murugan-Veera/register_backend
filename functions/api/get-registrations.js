@@ -1,6 +1,7 @@
 // functions/api/get-registrations.js
 
-export async function onRequest(context) {
+
+export default async function onRequest(context) {
     const { env } = context;
   
     const keys = await env.FORM_DATA.list();
