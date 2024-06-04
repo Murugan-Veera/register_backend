@@ -15,7 +15,7 @@ export async function onRequest(context) {
   }
 
   if (request.method === 'POST') {
-    const data = await request.json();
+    //const data = await request.json();
 
     const { name, email, password } = req.body;
 
@@ -34,7 +34,7 @@ export async function onRequest(context) {
     fs.mkdirSync(path.dirname(filePath), { recursive: true });
 
     // Read existing data
-    //let data = [];
+    let data = [];
     if (fs.existsSync(filePath)) {
       const fileContent = fs.readFileSync(filePath, 'utf-8');
       data = JSON.parse(fileContent);
