@@ -2,16 +2,8 @@
 
 export default async function onRequest(context) {
     
-
-    return new Response(JSON.stringify([{ name: 'Test User', email: 'test@example.com' }]), {
-        headers: {
-          'Content-Type': 'application/json',
-          'Access-Control-Allow-Origin': '*',
-        },
-      });
-
-      
-    /*const { env } = context;
+     
+    const { env } = context;
   
     try {
       // Fetch all keys in the namespace
@@ -35,11 +27,13 @@ export default async function onRequest(context) {
         headers: {
           'Content-Type': 'application/json',
           'Access-Control-Allow-Origin': '*',
+          'Access-Control-Allow-Methods': 'POST, OPTIONS',
+          'Access-Control-Allow-Headers': 'Content-Type',
         },
       });
     } catch (error) {
       console.error('Error fetching registrations:', error);
       return new Response('Internal Server Error', { status: 500 });
-    }*/
+    }
   }
   
