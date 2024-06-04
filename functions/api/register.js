@@ -21,6 +21,12 @@ export async function onRequest(context) {
     // For this example, we'll just log the data to the console.
     console.log('Received data:', data);
 
+    const id = new Date().getTime().toString(); // Use timestamp as a simple ID
+
+    // Save data to KV storage
+    await env.FORM_DATA.put(id, JSON.stringify(data));
+
+    
     return new Response(JSON.stringify({ message: 'Registration successful' }), {
       headers: {
         'Content-Type': 'application/json',
